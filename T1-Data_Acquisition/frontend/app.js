@@ -2,7 +2,7 @@
 // CONFIG
 // ============================================================
 
-const API_BASE = "https://mj1-data-acquisition.onrender.com/";
+const API_BASE = "https://mj1-data-acquisition.onrender.com";
 
 
 // ============================================================
