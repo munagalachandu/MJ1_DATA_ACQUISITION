@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Student Profile — Data Acquisition</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
+
+  <header class="hero">
+
+    <div class="eyebrow">
+      STUDENT PROFILE
+    </div>
+
+    <h1>
+      Data Acquisition
+    </h1>
+
+    <p class="sub">
+      Fill in what you have. Nothing here is scored or weighted —
+      this only collects and extracts your evidence.
+    </p>
+
+  </header>
+
+
+  <!-- =========================================================
+       FORM
+  ========================================================== -->
+
+  <form id="intakeForm">
+
+
+    <!-- =======================================================
+         01 BASIC DETAILS
+    ======================================================== -->
+
+    <section class="data-card">
+
+      <div class="section-heading">
+
+        <div class="section-number">
+          01
+        </div>
+
+        <div>
+          <h2>Basic details</h2>
+
+          <p>
+            Tell us a little about yourself.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="field-grid">
+
+        <label>
+          <span>Full name</span>
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Your full name"
+            required
+          />
+        </label>
+
+
+        <label>
+          <span>Degree / Course</span>
+
+          <input
+            type="text"
+            name="degree"
+            placeholder="e.g. B.E. Artificial Intelligence & Machine Learning"
+            required
+          />
+        </label>
+
+
+        <label class="full-field">
+          <span>Specialization</span>
+
+          <input
+            type="text"
+            name="specialization"
+            placeholder="e.g. AI & ML"
+          />
+        </label>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         02 ACADEMICS
+    ======================================================== -->
+
+    <section class="data-card">
+
+      <div class="section-heading">
+
+        <div class="section-number">
+          02
+        </div>
+
+        <div>
+          <h2>Semester marksheets</h2>
+
+          <p>
+            Upload the marksheet for every semester you have completed.
+            PDF, photo or scan is supported.
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- Semester count -->
+
+      <div class="semester-controls">
+
+        <label>
+          <span>Semesters completed</span>
+
+          <select id="semCount">
+
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6" selected>6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+
+          </select>
+
+        </label>
+
+      </div>
+
+
+      <!-- ALL SEMESTERS -->
+
+      <div
+        class="semester-grid"
+        id="semesterGrid"
+      ></div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         03 RESUME + CODING
+    ======================================================== -->
+
+    <section class="data-card">
+
+      <div class="section-heading">
+
+        <div class="section-number">
+          03
+        </div>
+
+        <div>
+          <h2>Resume & coding profiles</h2>
+
+          <p>
+            Add your resume and public coding profiles.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="resume-box">
+
+        <label>
+          <span>Resume</span>
+
+          <div class="upload-box" id="resumeUploadBox">
+
+            <div class="upload-icon">
+              ↑
+            </div>
+
+            <div>
+
+              <strong>
+                Upload your resume
+              </strong>
+
+              <small>
+                PDF or DOCX &middot; drag &amp; drop or click to browse
+              </small>
+
+            </div>
+
+            <input
+              type="file"
+              id="resumeFile"
+              accept=".pdf,.doc,.docx"
+            />
+
+          </div>
+
+          <div
+            class="file-preview"
+            id="resumePreview"
+          ></div>
+
+        </label>
+
+      </div>
+
+
+      <div class="field-grid coding-grid">
+
+        <label>
+
+          <span>
+            <img
+              src="https://cdn.simpleicons.org/github/EDE9DF"
+              class="plat-icon"
+              alt=""
+            >
+
+            GitHub username
+          </span>
+
+          <input
+            type="text"
+            id="githubUsername"
+            placeholder="e.g. mchandu"
+          />
+
+        </label>
+
+
+        <label>
+
+          <span>
+            <img
+              src="https://cdn.simpleicons.org/leetcode/EDE9DF"
+              class="plat-icon"
+              alt=""
+            >
+
+            LeetCode username
+          </span>
+
+          <input
+            type="text"
+            id="leetcodeUsername"
+            placeholder="e.g. mchandu23"
+          />
+
+        </label>
+
+      </div>
+
+
+      <!-- Other platforms -->
+
+      <div class="inner-card">
+
+        <div class="inner-heading">
+
+          <div>
+
+            <h3>
+              Other coding profiles
+            </h3>
+
+            <p>
+              Add any additional competitive programming profiles.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="quick-add-row">
+
+          <button
+            type="button"
+            class="quick-add"
+            data-platform="Codeforces"
+          >
+            <img
+              src="https://cdn.simpleicons.org/codeforces/EDE9DF"
+              class="plat-icon"
+              alt=""
+            >
+            Codeforces
+          </button>
+
+
+          <button
+            type="button"
+            class="quick-add"
+            data-platform="CodeChef"
+          >
+            <img
+              src="https://cdn.simpleicons.org/codechef/EDE9DF"
+              class="plat-icon"
+              alt=""
+            >
+            CodeChef
+          </button>
+
+
+          <button
+            type="button"
+            class="quick-add"
+            data-platform="HackerRank"
+          >
+            <img
+              src="https://cdn.simpleicons.org/hackerrank/EDE9DF"
+              class="plat-icon"
+              alt=""
+            >
+            HackerRank
+          </button>
+
+
+          <button
+            type="button"
+            class="btn-ghost"
+            id="addPlatformBtn"
+          >
+            + Other
+          </button>
+
+        </div>
+
+
+        <div
+          id="otherPlatformsRows"
+          class="dynamic-list"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         04 CERTIFICATIONS
+    ======================================================== -->
+
+    <section class="data-card">
+
+      <div class="section-heading">
+
+        <div class="section-number">
+          04
+        </div>
+
+        <div>
+
+          <h2>
+            Certifications
+          </h2>
+
+          <p>
+            Upload certificate proof or enter certification details manually.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="two-column">
+
+
+        <!-- Upload -->
+
+        <div class="inner-card">
+
+          <h3>
+            Upload certificate files
+          </h3>
+
+          <p class="hint">
+            Image/PDF, one file per certification.
+            Add as many certifications as you have &mdash;
+            each file becomes its own entry.
+          </p>
+
+
+          <div class="upload-box large" id="certUploadBox">
+
+            <div class="upload-icon">
+              ↑
+            </div>
+
+            <div>
+
+              <strong>
+                Choose certificate files
+              </strong>
+
+              <small>
+                PDF, JPG, PNG &middot; drag &amp; drop or click, multiple allowed
+              </small>
+
+            </div>
+
+            <input
+              type="file"
+              id="certFiles"
+              accept=".pdf,image/*"
+              multiple
+            />
+
+          </div>
+
+
+          <div
+            class="file-preview"
+            id="certPreview"
+          ></div>
+
+        </div>
+
+
+
+        <!-- Manual -->
+
+        <div class="inner-card">
+
+          <h3>
+            Or enter manually
+          </h3>
+
+          <p class="hint">
+            No file handy? Add the details directly.
+          </p>
+
+
+          <div
+            id="certManualRows"
+            class="dynamic-list"
+          ></div>
+
+
+          <button
+            type="button"
+            class="btn-ghost add-button"
+            id="addCertManualBtn"
+          >
+            + Add certification
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         05 HACKATHONS
+    ======================================================== -->
+
+    <section class="data-card">
+
+      <div class="section-heading">
+
+        <div class="section-number">
+          05
+        </div>
+
+        <div>
+
+          <h2>
+            Hackathons
+          </h2>
+
+          <p>
+            Add hackathon participation, wins, finalist positions and proof.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="two-column">
+
+
+        <div class="inner-card">
+
+          <h3>
+            Upload proof documents
+          </h3>
+
+          <p class="hint">
+            Participation or winning certificates.
+            One hackathon can be added per file &mdash;
+            drop several at once for multiple hackathons.
+          </p>
+
+
+          <div class="upload-box large" id="hackUploadBox">
+
+            <div class="upload-icon">
+              ↑
+            </div>
+
+            <div>
+
+              <strong>
+                Choose proof files
+              </strong>
+
+              <small>
+                PDF, JPG, PNG &middot; drag &amp; drop or click, multiple allowed
+              </small>
+
+            </div>
+
+            <input
+              type="file"
+              id="hackFiles"
+              accept=".pdf,image/*"
+              multiple
+            />
+
+          </div>
+
+
+          <div
+            class="file-preview"
+            id="hackPreview"
+          ></div>
+
+        </div>
+
+
+
+        <div class="inner-card">
+
+          <h3>
+            Or enter manually
+          </h3>
+
+          <div
+            id="hackManualRows"
+            class="dynamic-list"
+          ></div>
+
+
+          <button
+            type="button"
+            class="btn-ghost add-button"
+            id="addHackManualBtn"
+          >
+            + Add hackathon
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         06 ACHIEVEMENTS
+    ======================================================== -->
+
+    <section class="data-card">
+
+      <div class="section-heading">
+
+        <div class="section-number">
+          06
+        </div>
+
+        <div>
+
+          <h2>
+            Other achievements
+          </h2>
+
+          <p>
+            Awards, publications, competitions, fellowships and other evidence.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="two-column">
+
+
+        <div class="inner-card">
+
+          <h3>
+            Upload proof documents
+          </h3>
+
+          <p class="hint">
+            Upload awards, publications, competition results, etc.
+            Each file becomes its own achievement &mdash;
+            add as many as you like.
+          </p>
+
+
+          <div class="upload-box large" id="achUploadBox">
+
+            <div class="upload-icon">
+              ↑
+            </div>
+
+            <div>
+
+              <strong>
+                Choose achievement files
+              </strong>
+
+              <small>
+                PDF, JPG, PNG &middot; drag &amp; drop or click, multiple allowed
+              </small>
+
+            </div>
+
+            <input
+              type="file"
+              id="achFiles"
+              accept=".pdf,image/*"
+              multiple
+            />
+
+          </div>
+
+
+          <div
+            class="file-preview"
+            id="achPreview"
+          ></div>
+
+        </div>
+
+
+
+        <div class="inner-card">
+
+          <h3>
+            Or enter manually
+          </h3>
+
+
+          <div
+            id="achManualRows"
+            class="dynamic-list"
+          ></div>
+
+
+          <button
+            type="button"
+            class="btn-ghost add-button"
+            id="addAchManualBtn"
+          >
+            + Add achievement
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         SUBMIT
+    ======================================================== -->
+
+    <section class="submit-card">
+
+      <div>
+
+        <div class="eyebrow">
+          READY?
+        </div>
+
+        <h2>
+          Extract your profile
+        </h2>
+
+        <p>
+          Everything above will be sent to the extraction pipeline
+          together in one request.
+        </p>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="btn-primary submit-button"
+        id="submitBtn"
+      >
+        Submit & Extract Profile
+        <span>→</span>
+      </button>
+
+
+      <div
+        id="submitStatus"
+        class="status"
+      ></div>
+
+    </section>
+
+  </form>
+
+
+
+  <!-- =========================================================
+       RESULTS
+  ========================================================== -->
+
+  <div
+    id="results"
+    class="results hidden"
+  ></div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
